@@ -5,10 +5,11 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         Fish fish = new Fish(scanner);
-        int[] fishCount = fish.Calculator();
+        int[] fishData = fish.Calculator();
+        fish.Percentage(fishData);
 
         Experience experience = new Experience();
-        experience.Calculator(fishCount);
+        experience.Calculator(fishData);
 
         scanner.close();
     }
