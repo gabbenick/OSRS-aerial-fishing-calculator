@@ -47,6 +47,9 @@ public class Fish {
                 + mottledEel + " Mottled Eel. \nThe player will get " + commonTench
                 + " Common Tench. \nThe player will get " + blueGill + " Blue Gill.");
 
+        System.out.println("The time to get a golden tench is: " +
+                (20000 / fishPerHour));
+
         int[] fishCount = { greaterSiren, mottledEel, commonTench, blueGill };
 
         return fishCount;
