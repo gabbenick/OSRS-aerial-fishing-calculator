@@ -23,10 +23,10 @@ public class Fish {
 
         float x = (fishingLvl * 2 + hunterLvl) / 3;
 
-        int greaterSiren = 0;
-        int mottledEel = 0;
-        int commonTench = 0;
         int blueGill = 0;
+        int commonTench = 0;
+        int mottledEel = 0;
+        int greaterSiren = 0;
 
         for (int i = 0; i < fishPerHour; i++) {
             Double random = (Double) (Math.random() * (x - 1));
@@ -48,13 +48,25 @@ public class Fish {
                 + " Common Tench. \nThe player will get " + blueGill + " Blue Gill.");
 
         System.out.println("The time to get a golden tench is: " +
-                (20000 / fishPerHour));
+                (20000 / fishPerHour) + " hours.");
 
-        int[] fishCount = { greaterSiren, mottledEel, commonTench, blueGill };
+        int[] fishData = { blueGill, commonTench, mottledEel, greaterSiren, fishPerHour };
 
-        return fishCount;
+        return fishData;
     }
 
+    public void Percentage(int[] fishData) {
+        double totalFish = (double) fishData[4];
+        double perBlueGill = ((double) fishData[0] / totalFish) * 100.0;
+        double perCommonTench = ((double) fishData[1] / totalFish) * 100.0;
+        double perMottledEel = ((double) fishData[2] / totalFish) * 100.0;
+        double perGreaterSiren = ((double) fishData[3] / totalFish) * 100.0;
+
+        System.out.println("Greater Sirens Percentage: " + perGreaterSiren + " %");
+        System.out.println("Mottled Eel: Percentage: " + perMottledEel + " %");
+        System.out.println("Common Tench: Percentage: " + perCommonTench + " %");
+        System.out.println("Blue Gill: Percentage: " + perBlueGill + " %");
+    }
 }
 
 /*
