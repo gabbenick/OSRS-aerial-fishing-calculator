@@ -50,7 +50,7 @@ public class Fish {
         System.out.println("The time to get a golden tench is: " +
                 (20000 / fishPerHour) + " hours.");
 
-        int[] fishData = { blueGill, commonTench, mottledEel, greaterSiren, fishPerHour };
+        int[] fishData = { blueGill, commonTench, mottledEel, greaterSiren, fishPerHour, hunterLvl, fishingLvl };
 
         return fishData;
     }
