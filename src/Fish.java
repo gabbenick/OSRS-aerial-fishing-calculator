@@ -1,25 +1,10 @@
-import java.util.Scanner;
-
 public class Fish {
 
-    private Scanner scanner;
+    public int[] Calculator(int[] returnInput) {
 
-    public Fish(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
-    public int[] Calculator() {
-        System.out.println("Enter your fishing level: ");
-        int fishingLvl = scanner.nextInt();
-        System.out.println("Enter your hunter level: ");
-        int hunterLvl = scanner.nextInt();
-        if (fishingLvl < 0 || hunterLvl < 0 ||
-                fishingLvl > 100 || hunterLvl > 100) {
-            System.out.println("Invalid level.");
-            System.exit(1);
-        }
-        System.out.println("Enter the fish per hour: ");
-        int fishPerHour = scanner.nextInt();
+        int fishingLvl = returnInput[0];
+        int hunterLvl = returnInput[1];
+        int fishPerHour = returnInput[2];
 
         float x = (fishingLvl * 2 + hunterLvl) / 3;
 
@@ -50,13 +35,14 @@ public class Fish {
         System.out.println("The time to get a golden tench is: " +
                 (20000 / fishPerHour) + " hours.");
 
-        int[] fishData = { blueGill, commonTench, mottledEel, greaterSiren, fishPerHour, hunterLvl, fishingLvl };
+        int[] fishData = { blueGill, commonTench, mottledEel, greaterSiren };
 
         return fishData;
     }
 
-    public void Percentage(int[] fishData) {
-        double totalFish = (double) fishData[4];
+    public void Percentage(int[] fishData, int[] returnInput) {
+        double totalFish = (double) returnInput[2];
+
         double perBlueGill = ((double) fishData[0] / totalFish) * 100.0;
         double perCommonTench = ((double) fishData[1] / totalFish) * 100.0;
         double perMottledEel = ((double) fishData[2] / totalFish) * 100.0;

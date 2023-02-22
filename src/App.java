@@ -4,12 +4,18 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
-        Fish fish = new Fish(scanner);
-        int[] fishData = fish.Calculator();
-        fish.Percentage(fishData);
+        Input input = new Input(scanner);
+        int[] returnInput = input.ReturningInput();
+
+        Fish fish = new Fish();
+        int[] fishData = fish.Calculator(returnInput);
+        fish.Percentage(fishData, returnInput);
 
         Experience experience = new Experience();
         experience.Calculator(fishData);
+
+        MolchPearl molchPearl = new MolchPearl();
+        molchPearl.Calculator(fishData);
 
         scanner.close();
     }
