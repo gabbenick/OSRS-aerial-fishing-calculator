@@ -2,9 +2,9 @@ public class Experience {
 
     public void Calculator(int[] fishCount) {
 
-        System.out.println("Greater Sirens: " + fishCount[0]);
-        System.out.println("Mottled Eel: " + fishCount[1]);
-        System.out.println("Common Tench: " + fishCount[2]);
-        System.out.println("Blue Gill: " + fishCount[3]);
+        double totalFishingExp = (((double) fishCount[0] * 11.5) + ((double) fishCount[1] * 40.0)
+                + ((double) fishCount[2] * 65.0) + ((double) fishCount[3] * 100.0));
+
+        System.out.println("The amount of fishing EXP: " + totalFishingExp);
     }
 }
