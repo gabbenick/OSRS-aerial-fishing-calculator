@@ -15,7 +15,7 @@ public class App {
         experience.Calculator(fishData);
 
         MolchPearl molchPearl = new MolchPearl();
-        molchPearl.Calculator(fishData);
+        molchPearl.Calculator(fishData, returnInput);
 
         scanner.close();
     }
